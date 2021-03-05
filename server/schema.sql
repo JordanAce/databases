@@ -11,8 +11,9 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE messages (
   `messagesId` int(10) NOT NULL AUTO_INCREMENT,
-  `messagesName` varchar(55) DEFAULT NULL,
-  `messagesMessage` varchar (100) DEFAULT NULL,
+  `userName` varchar(55) DEFAULT NULL,
+  `userMessage` varchar (255) DEFAULT NULL,
+  `roomName` varchar (255) DEFAULT NULL,
   PRIMARY KEY (`messagesId`)
 );
 
