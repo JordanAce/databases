@@ -1,6 +1,4 @@
-USE chat;
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE users (
   `userID` int(10) NOT NULL AUTO_INCREMENT,
   `userName` varchar(55) DEFAULT NULL,
@@ -11,9 +9,9 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE messages (
   `messagesId` int(10) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(55) DEFAULT NULL,
-  `userMessage` varchar (255) DEFAULT NULL,
-  `roomName` varchar (255) DEFAULT NULL,
+  `username` varchar(55) DEFAULT NULL,
+  `text` varchar (255) DEFAULT NULL,
+  `roomname` varchar (255) DEFAULT NULL,
   PRIMARY KEY (`messagesId`)
 );
 

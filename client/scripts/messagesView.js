@@ -23,7 +23,7 @@ var MessagesView = {
 
   handleClick: function(event) {
     // Get username from data attribute
-    var username = $(event.target).data('username');
+    var username = $(event.target).data('userName');
     if (username === undefined) { return; }
 
     Friends.toggleStatus(username, MessagesView.render);
