@@ -1,4 +1,6 @@
 var db = require('../db');
+var Sequelize = require('sequelize');
+
 
 
 module.exports = {
@@ -9,21 +11,18 @@ module.exports = {
       var queryArgs = [];
       db.dbConnection.query(queryString, queryArgs, function(err, results) {
         if (err) {
-          console.log('Error' + err);
+          console.log('Error in messages get' + err);
         }
         callback(results);
       });
     },
     // a function which can be used to insert a message into the database
     post: function (body) {
-      console.log('post body ' + body.message);
       var queryString = `insert into messages (username, text, roomname) values ('${body.username}', '${body.message}', '${body.roomname}')`;
-      // var queryString = `insert into messages (userMessage) values ('${body.message}')`;
-
       var queryArgs = [];
       db.dbConnection.query(queryString, queryArgs, function(err, results) {
         if (err) {
-          console.log('Error' + err);
+          console.log('Error in messages post' + err);
         }
       });
     },
@@ -36,7 +35,7 @@ module.exports = {
       var queryArgs = [];
       db.dbConnection.query(queryString, queryArgs, function(err, results) {
         if (err) {
-          console.log('Error' + err);
+          console.log('Error in user get' + err);
         } else {
           return results;
         }
